@@ -37,6 +37,7 @@ void Department::addComplaint(Complaint* comp)
 const vector<Complaint*>& Department::getComplaints() const {
     return complaints;
 }
+
 void Department::addEmployees(Employee* emp) {
     employees.push_back(emp);
 }

@@ -1,13 +1,2 @@
-﻿  Administrator.cpp
-  Complaint.cpp
-  Department.cpp
-  Director.cpp
-  Employee.cpp
-  FileHandler.cpp
-  Main.cpp
-  Manager.cpp
-  souce.cpp
-  Task.cpp
-  Teacher.cpp
-  Generating Code...
+﻿  souce.cpp
   Project_SDA_Again.vcxproj -> E:\ProjectSDA\Qasim\Curr\x64\Debug\Project_SDA_Again.exe

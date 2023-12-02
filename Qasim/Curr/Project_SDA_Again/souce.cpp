@@ -23,11 +23,16 @@ int main() {
     vector<Teacher*> tech_vec;
     vector<Department*> dept_vec;
     Manager* mgr = nullptr;
+    Employee* employee1 = nullptr;
 
     Populate_from_file("Teacher.txt", tech_vec);
     Populate_from_file("Department.txt", dept_vec);
-    Populate_from_file_Part2("Manager.txt", mgr, dept_vec,0);
+   // Populate_from_file_Part2("Manager.txt", mgr, dept_vec,0);
+   // Populate_from_file_Part2("employee.txt", employee1, dept_vec, 0,"Coder");
 
+    ifstream f2("dummy.txt");
+    if (!f2.is_open())
+        cout << "ERROR\n";
 
 
     // Create a complaint
@@ -61,7 +66,7 @@ int main() {
 
     //Adding Employees  
 
-    Employee* employee1 = new Employee(1, "John", dept_vec[0]);
+  //  Employee* employee1 = new Employee(1, "John", dept_vec[0]);
     Employee* employee2 = new Employee(2, "Jane", dept_vec[0]);
     Employee* employee3 = new Employee(3, "Bob", dept_vec[0]);
 
@@ -88,6 +93,8 @@ int main() {
 
     // dept_vec[0]->PrintCmpDetails(1);
 
+    //------------------------------------------------
+    // DIRECTORS PANEL
     Interface2* inter2 = new Main(tech_vec, dept_vec);
     Director* dir = new Director(inter2);
 
@@ -117,7 +124,7 @@ int main() {
     else
         cout << "Invalid Range!\n";
 
-
+    //---------------------------------------------
     return 0;
 }
 
