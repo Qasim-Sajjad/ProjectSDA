@@ -9,6 +9,8 @@ using namespace std;
 
 class Employee;
 class Manager;
+
+
 class Department {
 public:
     Department(int id, string name);
@@ -16,12 +18,12 @@ public:
     void addComplaint(Complaint* comp);
     const vector<Complaint*>& getComplaints() const;
     void addEmployees(Employee* emp);
+    vector<Employee*> Get_Dept_Emps();
     void setManager(Manager* mgr);
     string getName();
     void ABD_cmp_Employees();
     void printEmployees();
-    //
-    //WRAPPER
+    void Print_Cmps();
     int GetID();
     string GetMgr();
     vector<tm> GetAllCmpTime();
@@ -30,6 +32,7 @@ public:
     Complaint* GetCmp(int ind);
     void PrintCmpDetails(int ind);
     void rmManager(Manager* mgr);
+
 private:
     int id;
     string name;

@@ -10,23 +10,25 @@ using namespace std;
 enum State {
 	New,
 	Assigned,
-	Completed,
 	Resolved,
+	Completed,
 	Closed
 };
 class Department;
 class Teacher;
+
+
 class Complaint {
 	tm date;
 	State state;
 	Teacher* t;
 	Department* dep;
+	tm Local_Time;
 public:
 	
-	tm Local_Time;
 	int id;
 	string description;
-	Complaint(int id,Teacher* t, Department* dep, string description);
+	Complaint(int id,Teacher* t, Department* dep, string description,State st = New);
 	const vector<Complaint*>& getComplaints(Teacher* t);
 	string Dept_mgr_name();
 	void Complaint_Assigned_Emps();
@@ -37,5 +39,6 @@ public:
 	string getDescription();
 	int getID();
 	tm GetTime();
+	void setTime(tm Time);
 
 };

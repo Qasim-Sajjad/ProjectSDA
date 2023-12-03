@@ -12,8 +12,8 @@ public:
 	void CompleteTask();
 	string getName();
 	void printComplainStatus(Complaint* comp);
-	//void doTask(Complaint * comp);
-	//void notify();
+	int GetID();
+
 private:
 	int id;
 	string name;

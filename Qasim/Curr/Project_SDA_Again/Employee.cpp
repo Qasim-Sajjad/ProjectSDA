@@ -38,5 +38,10 @@ void Employee::printComplainStatus(Complaint* comp)
     cout << "Status of that complaint is" << comp->currState();
 
 }
+
+int Employee::GetID()
+{
+    return id;
+}
     
 

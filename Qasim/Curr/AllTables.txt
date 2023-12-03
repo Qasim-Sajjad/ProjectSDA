@@ -1,0 +1,37 @@
+	COMPLAINT TABLE
+
+ID   NAME    		T_ID   	D_ID	Status     Time
+0    FIX ISSUE 		2	0	0 (NEW)	   2023-2-4
+
+-------Teacher TABLE---------
+
+ID 	T_NAME
+0	Smith Warner
+1	Abdullah
+2	Coder
+
+
+--------Department TABLE-------
+
+ID	D_NAME		
+0	Accounts	
+1	IT
+2	Admin		
+
+-------- MANAGER Table-------
+ID	Name 		D_ID	
+0	Ali		1
+1	Qasim		0
+
+---------Employee Table--------
+ID	Name	D_ID
+0	Coder	0
+1	Bro	1
+2	Kohli	2
+
+---------TASK Table----------
+
+M_ID  E_ID	Description
+1	1	Do Task
+1	2	Do Task
+1	3	Do Task

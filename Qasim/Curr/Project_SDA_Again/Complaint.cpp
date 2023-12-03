@@ -5,20 +5,21 @@
 
 
 // Constructor
-Complaint::Complaint(int id, Teacher* t, Department* dep, string description)
+Complaint::Complaint(int id, Teacher* t, Department* dep, string description,State st)
 {
     this->id = id;
     this->t = t;
     this->dep = dep;
     this->description = description;
-    this->state = New;
-    //
-    //Geting Current YYYY-MM-DD.
-    std::time_t cur_time = std::time(nullptr);
-    localtime_s(&Local_Time, &cur_time);
-    Local_Time.tm_year = Local_Time.tm_year + 1900;
-    Local_Time.tm_mon = Local_Time.tm_mon + 1;
+    this->state = st;
 
+    //Geting Current YYYY-MM-DD.
+    if (state == New) {
+        std::time_t cur_time = std::time(nullptr);
+        localtime_s(&Local_Time, &cur_time);
+        Local_Time.tm_year = Local_Time.tm_year + 1900;
+        Local_Time.tm_mon = Local_Time.tm_mon + 1;
+    }
 }
 string Complaint::getDescription()
 {
@@ -62,4 +63,8 @@ void Complaint::generateReport() {
 tm Complaint::GetTime()
 {
     return Local_Time;
+}
+
+void Complaint::setTime(tm Time) {
+    Local_Time = Time;
 }

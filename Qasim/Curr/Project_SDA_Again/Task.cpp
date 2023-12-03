@@ -1,4 +1,3 @@
-// Task.cpp
 #include "Task.h"
 #include<iostream>
 using namespace std;
@@ -9,7 +8,7 @@ Task::Task(Manager* mgr, const vector<Employee*>& emp,Complaint* comp, const str
     this->assignedEmployees = emp;
     this->assignedManager = mgr;
     this->assignedComplaint = comp;
-    assignedComplaint->changeState(State::Assigned);;
+    assignedComplaint->changeState(State::Assigned);
 
 }
 Manager* Task::getAssignedManager() const {

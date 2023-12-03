@@ -25,8 +25,20 @@ void Department::printEmployees()
     cout << "\nEmployees in "<<this->name<<" Department \n";
     for (int i = 0; i < employees.size(); i++)
     {
-        cout <<"\n"<< employees[i]->getName() << "\n";
+        cout<<"Emp ID :" << employees[i]->GetID() << " Name : " << employees[i]->getName() << "\n";
     }
+}
+void Department::Print_Cmps()
+{
+
+    cout << "\n-------COMPLAINTS of "<<name<<" --------\n";
+    for (Complaint* C : complaints) {
+        cout << "Complaint ID :" << C->getID()
+            << " Description :" << C->getDescription()
+            << " Status :" << C->currState()
+            << " Time :" << C->GetTime().tm_year << "-" << C->GetTime().tm_mon << "-" << C->GetTime().tm_mday << endl;
+    }
+
 }
 void Department::addComplaint(Complaint* comp)
 {
@@ -40,6 +52,10 @@ const vector<Complaint*>& Department::getComplaints() const {
 
 void Department::addEmployees(Employee* emp) {
     employees.push_back(emp);
+}
+vector<Employee*> Department::Get_Dept_Emps()
+{
+    return employees;
 }
 void Department::setManager(Manager* manager) {
     mgr = manager;
@@ -76,7 +92,9 @@ void Department::PrintCmpDetails(int ind)
     //If Such Complaint Exist, Print its Credentials.
     if (ind >= 0 && ind < complaints.size()) {
         cout << "Complaint Details for :" << name << " Department\n";
-        cout << "Description : " << complaints[ind]->getDescription() << "\t Status :" << complaints[ind]->currState() << " Time :" << complaints[ind]->GetTime().tm_year << "-" << complaints[ind]->GetTime().tm_mon << "-" << complaints[ind]->GetTime().tm_mday << endl;
+        cout << "Description : " << complaints[ind]->getDescription() 
+            << "\t Status :" << complaints[ind]->currState() 
+            << " Time :" << complaints[ind]->GetTime().tm_year << "-" << complaints[ind]->GetTime().tm_mon << "-" << complaints[ind]->GetTime().tm_mday << endl;
     }
 }
 
